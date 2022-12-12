@@ -1,10 +1,10 @@
-//import java.util.Scanner;
+import java.util.Scanner;
 //import java.util.String;
 public class Main {
     public static void main(String[] args) {
-        int myFavoriteNumber = 2;
-        String myString = "Good Morning, Icon!";
-        System.out.println(myString);
+//        int myFavoriteNumber = 2;
+//        String myString = "Good Morning, Icon!";
+//        System.out.println(myString);
 
 //        myString = 'c';
 //        myString = 3.14159;
@@ -50,12 +50,25 @@ public class Main {
 //        int reallyBigNumber2.MAX_VALUE = 2147483648;
 //line 50 goes past int buffer
 
+///////////////////////////////End syntax lecture
+//%s string %d decimal intergers
+/// ///////// ///////////////////////////////////////// Starts Console Input Output Lecture
+//%s inserts value of a string s is for string for example line 58 %n is for new line function
+//        String name = "codeup";
+//        System.out.printf("Hello there, %s. Nice to see you.%n", name);
+//
+//
+//        String greeting = "Salutations";
+//        String name1 = "codeup";
+//        System.out.printf("%s, %s!", greeting, name1);
 
+//     ***************************   .next reads only first word and .nextLine reads entire line******************
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.print("Enter something: ");
+        String userInput = scanner.nextLine();
 
-
-
-
+        System.out.println("You entered: --> \"" + userInput + "\" <--");
 
 
 
