@@ -5,7 +5,6 @@ public class HelloWorld {
      System.out.println(myFavoriteNumber);
      String myString = "3.14159";
      System.out.println(myString);
-
     }
 }
 //public static void main(String[] anyname) this is necessary for every file
