@@ -45,10 +45,5 @@ public class ConsoleExercises {
         System.out.printf("Perimeter of the room: %s %n", perimeter);
 
 
-
-
-
-
-
     }
 }
