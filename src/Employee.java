@@ -1,9 +1,28 @@
-public class Employee {
-    //public String final work() { /// prohibits all inheritance
-    public String work() {
-        return "Filling out TPS reports";
+abstract class Employee {
+    protected String name;
+    protected String department;
+    public Employee(String name, String department) {
+        this.name = name;
+        this.department = department;
     }
+    public String getName() {
+        return name;
+    }
+    public String getDepartment() {
+        return department;
+    }
+
+    // abstract method
+    public abstract String work();
 }
+
+
+//public class Employee {
+//    //public String final work() { /// prohibits all inheritance
+//    public String work() {
+//        return "Filling out TPS reports";
+//    }
+//}
 
 //class Employee extends Person {
 //    private double salary;
