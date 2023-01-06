@@ -1,5 +1,5 @@
 //interface example
-public class Developer implements Business{
+public class Developer {
     public void drinkCoffee(){
         String abomination = "Vanilla Chai Pumpkin spice mocha frappe latte";
         System.out.println(abomination);
