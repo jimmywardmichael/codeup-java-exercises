@@ -1,5 +1,5 @@
 package movies;
-import java.util.Arrays;
+
 public class MoviesArray {
     public static Movie[] findAll() {
         return new Movie[]{
