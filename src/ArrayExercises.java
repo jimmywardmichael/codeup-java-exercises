@@ -11,7 +11,12 @@ public static void main(String[] args){
         people[2] = new Person("Charlie");
         for (int i = 0; i < people.length; i++) {
             System.out.println(people[i].getName());
+            }
+        }
+        public static Person[] addPerson(Person[] people, Person person) {
+            Person[] newPeople = Arrays.copyOf(people, people.length + 1);
+            newPeople[newPeople.length - 1] = person;
+            return newPeople;
+        }
     }
-    }
-
 }
