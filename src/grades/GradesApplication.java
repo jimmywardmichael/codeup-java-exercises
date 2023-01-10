@@ -8,10 +8,10 @@ import java.util.Scanner;
 public class GradesApplication {
     public static void main(String[] args) {
 
-        //todo: Created a map
+
         HashMap<String, Student> students = new HashMap<>();
 
-        //todo: creating 4 student objects with 3 grades
+
         Student bill = new Student("Bill");
         bill.addGrade(50);
         bill.addGrade(87);
@@ -29,17 +29,16 @@ public class GradesApplication {
         imposter.addGrade(100);
         imposter.addGrade(100);
 
-        //todo: add Github username and Student object to map
+
         students.put("billagus", bill);
         students.put("jillagus", jill);
         students.put("willagus", will);
         students.put("philagus", imposter);
         System.out.println();
 
-        //todo: add user interaction to see students grades based on github handle
         Scanner scanner = new Scanner(System.in);
         boolean keepGoing = true;
-        //THESE NULL VARIABLES ARE FOR STORING DATA FROM A LOOP
+
         String student = null;
         String username = null;
         Double gradeAvg = null;
