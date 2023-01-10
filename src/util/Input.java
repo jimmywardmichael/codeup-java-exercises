@@ -1,3 +1,5 @@
+
+
 package util;
 
 import java.util.Scanner;
@@ -26,7 +28,14 @@ public class Input {
     }
 
     public static int getInt(){
-        return scanner.nextInt();
+        System.out.println("Enter an integer value");
+        String stringVal = getString();
+        try{
+            return Integer.valueOf(stringVal);
+        }catch (NumberFormatException e){
+            System.out.println("You had an invalid input, try again");
+            return getInt();
+        }
     }
 
     public static double getDouble(double min, double max){
@@ -39,8 +48,15 @@ public class Input {
     }
 
     public static double getDouble(){
-        return scanner.nextDouble();
-
+        System.out.println("Enter an double value");
+        String stringVal = getString();
+        double doubleVal = 0;
+        try{
+            return Double.valueOf(stringVal);
+        }catch (NumberFormatException e) {
+            System.out.println("Invalid input");
+            return getDouble();
+        }
     }
 
 }
