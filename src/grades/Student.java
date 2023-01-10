@@ -38,12 +38,7 @@ public class Student{
         });
         return t.get() / grades.size();
 
-//todo: this is same but for() loop
-//        double sum = 0;
-//        for (double grade : grades) {
-//            sum += grade;
-//        }
-//        return sum / grades.size();
+
     }
 
 }
