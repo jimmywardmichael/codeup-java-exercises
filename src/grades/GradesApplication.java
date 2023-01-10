@@ -4,51 +4,83 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+
 public class GradesApplication {
     public static void main(String[] args) {
-        Map<String, Student> students = new HashMap<>();
-        students.put("user1", new Student("Student 1"));
-        students.put("user2", new Student("Student 2"));
-        students.put("user3", new Student("Student 3"));
-        students.put("user4", new Student("Student 4"));
 
-        // add some grades for each student
-        students.get("user1").addGrade(90);
-        students.get("user1").addGrade(80);
-        students.get("user1").addGrade(70);
+        //todo: Created a map
+        HashMap<String, Student> students = new HashMap<>();
 
-        students.get("user2").addGrade(95);
-        students.get("user2").addGrade(85);
-        students.get("user2").addGrade(75);
+        //todo: creating 4 student objects with 3 grades
+        Student bill = new Student("Bill");
+        bill.addGrade(50);
+        bill.addGrade(87);
+        bill.addGrade(43);
+        Student jill = new Student("Jill");
+        jill.addGrade(95);
+        jill.addGrade(93);
+        jill.addGrade(90);
+        Student will = new Student("Will");
+        will.addGrade(75);
+        will.addGrade(83);
+        will.addGrade(72);
+        Student imposter = new Student("Phil");
+        imposter.addGrade(100);
+        imposter.addGrade(100);
+        imposter.addGrade(100);
 
-        students.get("user3").addGrade(100);
-        students.get("user3").addGrade(90);
-        students.get("user3").addGrade(80);
+        //todo: add Github username and Student object to map
+        students.put("billagus", bill);
+        students.put("jillagus", jill);
+        students.put("willagus", will);
+        students.put("philagus", imposter);
+        System.out.println();
 
-        students.get("user4").addGrade(70);
-        students.get("user4").addGrade(80);
-        students.get("user4").addGrade(90);
-
+        //todo: add user interaction to see students grades based on github handle
         Scanner scanner = new Scanner(System.in);
-        boolean keepRunning = true;
-        while (keepRunning) {
-            System.out.println("GitHub Usernames: ");
-            for (String username : students.keySet()) {
-                System.out.print(username + " ");
-            }
-            System.out.println();
+        boolean keepGoing = true;
+        //THESE NULL VARIABLES ARE FOR STORING DATA FROM A LOOP
+        String student = null;
+        String username = null;
+        Double gradeAvg = null;
 
-            System.out.print("Enter a GitHub username to see more information (or 'q' to quit): ");
-            String input = scanner.nextLine();
-            if (input.equalsIgnoreCase("q")) {
-                keepRunning = false;
-            } else if (students.containsKey(input)) {
-                Student student = students.get(input);
-                System.out.println("Name: " + student.getName());
-                System.out.println("Grades: " + student.grades);
-                System.out.println("Grade Average: " + student.getGradeAverage());
-            } else  {
-                System.out.println("No users with that username were found.");
+        System.out.println("Welcome!");
+        while (keepGoing){
+            System.out.println("Here are the GitHub usernames of our students:");
+            System.out.println("---------------------------------------------------");
+            students.keySet().forEach((k) -> {
+                System.out.printf("| %s | ",k);
+            });
+            System.out.println("\n---------------------------------------------------");
+            System.out.println("\nWhat student would you like to see more information on?");
+            String answer1 = scanner.nextLine();
+            for (Map.Entry<String, Student> entry : students.entrySet()) {
+                String k = entry.getKey();
+                Student v = entry.getValue();
+                if (answer1.contains(k)){
+                    student = v.getName();
+                    username = k;
+                    gradeAvg = v.getGradeAverage();
+                }
+            }
+
+            if (student == null){
+                System.err.printf("Sorry, no student found with the GitHub username of \"%s\".%n %n", answer1);
+            } else {
+                System.out.printf("Name: %s - Github Username: %s %nCurrent Average: %.2f%n %n", student, username, gradeAvg);
+            }
+
+            System.out.println("Would you like to see another student? [Y/N]");
+            String answer2 = scanner.nextLine();
+            if (answer2.equalsIgnoreCase("n")){
+                System.out.println("Goodbye, and have a wonderful day!");
+                keepGoing = false;
+            }
+            if (answer2.equalsIgnoreCase("y")){
+                System.out.println("GREAT!");
+                student = null;
+                username = null;
+                gradeAvg = null;
             }
         }
     }
