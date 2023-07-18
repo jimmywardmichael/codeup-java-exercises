@@ -20,6 +20,9 @@ class SuperHero extends Person {
         System.out.println(theManOfSteel.getName()); // "Superman"
         System.out.println(theManOfSteel.getSecretIdentity()); // "Clark Kent"
         System.out.println(theDarkKnight.getName()); // "Superman"
+
+
         System.out.println(theDarkKnight.getSecretIdentity()); // "Clark Kent"
+
     }
 }

@@ -14,4 +14,5 @@ public class InputTest {
         System.out.println(Input.getInt());
 //        System.out.println(Input.getDouble());
     }
+
 }
