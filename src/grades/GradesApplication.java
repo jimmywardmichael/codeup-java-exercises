@@ -12,6 +12,7 @@ public class GradesApplication {
         HashMap<String, Student> students = new HashMap<>();
 
 
+
         Student bill = new Student("Bill");
         bill.addGrade(50);
         bill.addGrade(87);
